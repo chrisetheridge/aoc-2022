@@ -14,3 +14,8 @@ To execute a day:
 bb -x aoc-2022.day1/part-one
 ```
 
+You can also use the `run-day` task:
+
+```
+bb run-day 1
+```

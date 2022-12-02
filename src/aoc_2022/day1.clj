@@ -1,23 +1,26 @@
 (ns aoc-2022.day1
-  (:require [clojure.string :as string]))
+  (:require [aoc-2022.core :as a22.core]))
 
 (def input
-  (->> (slurp "resources/inputs/day1.txt")
-       string/split-lines
+  (->> (a22.core/read-input 1)
        (map parse-long)))
 
 (defn part-one [_]
   (->> input
        (partition-by nil?)
-       (remove (partial every? nil?))
+       (remove #(= '(nil) %))
        (map (partial reduce +))
        (apply max)))
 
 (defn part-two [_]
   (->> input
        (partition-by nil?)
-       (remove (partial every? nil?))
+       (remove #(= '(nil) %))
        (map (partial reduce +))
        sort
        (take-last 3)
        (reduce +)))
+
+(defn run [_]
+  (println "Part 1:" (part-one nil))
+  (println "Part 2:" (part-two nil)))
