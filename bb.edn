@@ -1,5 +1,7 @@
-{:paths ["src" "resources"]
- :tasks {run-day {:doc "Run a specific day"
-                  :task (let [day (parse-long (first *command-line-args*))]
-                          (println "Running day" day)
-                          (exec (symbol (str "aoc-2022.day" day "/run"))))}}}
+{:paths ["src" "resources" "tasks"]
+ :tasks {run-day   {:doc  "Run a specific day"
+                    :task (let [day (parse-long (first *command-line-args*))]
+                            (println "Running day" day)
+                            (exec (symbol (str "aoc-2022.day" day "/run"))))}
+         init-day  {:doc  "Create new files for a day"
+                    :task (exec 'init/init-day)}}}
