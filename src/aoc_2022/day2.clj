@@ -36,6 +36,7 @@
 
 (def input
   (->> (a22/read-input 2)
+       string/split-lines
        (map #(string/split % #" "))))
 
 (defn determine-round [[oppo me]]

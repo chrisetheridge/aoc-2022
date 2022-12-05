@@ -1,5 +1,4 @@
-(ns aoc-2022.core
-  (:require [clojure.string :as string]))
+(ns aoc-2022.core)
 
 (defn read-input [n]
-  (string/split-lines (slurp (str "resources/inputs/day" n ".txt"))))
+  (slurp (str "resources/inputs/day" n ".txt")))

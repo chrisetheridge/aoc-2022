@@ -1,9 +1,10 @@
 (ns aoc-2022.day3
   (:require [aoc-2022.core :as a22]
-            [clojure.set :as set]))
+            [clojure.set :as set]
+            [clojure.string :as string]))
 
 (def input
-  (a22/read-input 3))
+  (string/split-lines (a22/read-input 3)))
 
 (def sample
   ["vJrwpWtwJgWrhcsFMMfFFhFp"

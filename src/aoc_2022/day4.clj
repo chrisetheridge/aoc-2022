@@ -15,6 +15,7 @@
 
 (def input
   (->> (a22/read-input 4)
+       string/split-lines
        (map explode-pairs)))
 
 (defn pairs-cover? [p1 p2]

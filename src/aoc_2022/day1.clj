@@ -1,8 +1,10 @@
 (ns aoc-2022.day1
-  (:require [aoc-2022.core :as a22.core]))
+  (:require [aoc-2022.core :as a22.core]
+            [clojure.string :as string]))
 
 (def input
   (->> (a22.core/read-input 1)
+       string/split-lines
        (map parse-long)))
 
 (defn part-one [_]
