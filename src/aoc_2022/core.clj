@@ -7,4 +7,4 @@
   `(let [t0#  (.getTime (java.util.Date.))
          res# (do ~@body)
          dt#  (- (.getTime (java.util.Date.)) t0#)]
-     (str res# ", " dt# "ms")))
+     [res# (str dt# "ms")]))
