@@ -52,7 +52,7 @@
   (+ (get result-scores round-result)
      (get shape-scores me-shape)))
 
-(defn part-1 [_]
+(defn part-one [_]
   (->> (for [round input
              :let  [{:keys [me-shape result]} (determine-round round)]]
          (round-score me-shape result))
@@ -64,10 +64,14 @@
     :win  (get loses oppo-shape)
     :lose (get beats oppo-shape)))
 
-(defn part-2 [_]
+(defn part-two [_]
   (->> (for [[oppo desired-result] input
              :let                  [oppo-shape (translate oppo)
                                     desired (translate-desired-result desired-result)
                                     my-pick (desired-pick desired oppo-shape)]]
          (round-score my-pick desired))
        (reduce +)))
+
+(defn run [_]
+  (println "Part 1:" (part-one nil))
+  (println "Part 2:" (part-two nil)))

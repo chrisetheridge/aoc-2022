@@ -33,7 +33,7 @@
       (- n 38)
       (- n 96))))
 
-(defn part-1 [_]
+(defn part-one [_]
   (->> input
        (map (comp priority first common-items split-parts))
        (reduce +)))
@@ -46,11 +46,15 @@
    "ttgJtRGJQctTZtZT"
    "CrZsJsPPZsGzwwsLwLmpwMDw"])
 
-(defn part-2 [_]
+(defn part-two [_]
   (->> input
        (partition-all 3)
        (map (comp priority first common-items vec))
        (reduce +)))
+
+(defn run [_]
+  (println "Part 1:" (part-one nil))
+  (println "Part 2:" (part-two nil)))
 
 (comment
   (priority \a)

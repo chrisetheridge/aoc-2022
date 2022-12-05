@@ -32,15 +32,19 @@
        string/split-lines
        (map explode-pairs)))
 
-(defn part-1 [_]
+(defn part-one [_]
   (->> input
        (map (fn [[p1 p2]]
               (pairs-cover? p1 p2)))
        (remove false?)
        count))
 
-(defn part-2 [_]
+(defn part-two [_]
   (->> input
        (keep (fn [[p1 p2]]
                (seq (set/intersection p1 p2))))
        count))
+
+(defn run [_]
+  (println "Part 1:" (part-one nil))
+  (println "Part 2:" (part-two nil)))
