@@ -1,10 +1,10 @@
 (ns aoc-2022.day3
-  (:require [aoc-2022.core :as a22]
+  (:require [aoc-2022.core :as a22.core]
             [clojure.set :as set]
             [clojure.string :as string]))
 
 (def input
-  (string/split-lines (a22/read-input 3)))
+  (string/split-lines (a22.core/read-input 3)))
 
 (def sample
   ["vJrwpWtwJgWrhcsFMMfFFhFp"
@@ -53,8 +53,8 @@
        (reduce +)))
 
 (defn run [_]
-  (println "Part 1:" (part-one nil))
-  (println "Part 2:" (part-two nil)))
+  (println "Part 1:" (a22.core/timed (part-one nil)))
+  (println "Part 2:" (a22.core/timed (part-two nil))))
 
 (comment
   (priority \a)

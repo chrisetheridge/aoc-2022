@@ -24,5 +24,5 @@
        (reduce +)))
 
 (defn run [_]
-  (println "Part 1:" (part-one nil))
-  (println "Part 2:" (part-two nil)))
+  (println "Part 1:" (a22.core/timed (part-one nil)))
+  (println "Part 2:" (a22.core/timed (part-two nil))))

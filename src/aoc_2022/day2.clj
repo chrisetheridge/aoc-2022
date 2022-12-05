@@ -1,5 +1,5 @@
 (ns aoc-2022.day2
-  (:require [aoc-2022.core :as a22]
+  (:require [aoc-2022.core :as a22.core]
             [clojure.string :as string]
             [clojure.set :as set]))
 
@@ -35,7 +35,7 @@
    "Z" :win})
 
 (def input
-  (->> (a22/read-input 2)
+  (->> (a22.core/read-input 2)
        string/split-lines
        (map #(string/split % #" "))))
 
@@ -73,5 +73,5 @@
        (reduce +)))
 
 (defn run [_]
-  (println "Part 1:" (part-one nil))
-  (println "Part 2:" (part-two nil)))
+  (println "Part 1:" (a22.core/timed (part-one nil)))
+  (println "Part 2:" (a22.core/timed (part-two nil))))

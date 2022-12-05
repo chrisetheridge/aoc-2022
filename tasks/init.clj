@@ -15,8 +15,8 @@
 (defn part-two [_])
 
 (defn run [_]
-  (println \"Part one:\" (part-one nil))
-  (println \"Part two:\" (part-two nil)))"))
+  (println \"Part one:\" (a22.core/timed (part-one nil)))
+  (println \"Part two:\" (a22.core/timed (part-two nil))))"))
 
 (defn session-key []
   (if-some [key (System/getenv "AOC_SESSION")]

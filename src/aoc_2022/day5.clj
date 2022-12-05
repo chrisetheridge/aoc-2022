@@ -1,9 +1,9 @@
 (ns aoc-2022.day5
-  (:require [aoc-2022.core :as a22]
+  (:require [aoc-2022.core :as a22.core]
             [clojure.string :as string]))
 
 (def input
-  (a22/read-input 5))
+  (a22.core/read-input 5))
 
 (def sample
   "    [D]
@@ -57,12 +57,16 @@ move 1 from 1 to 2")
        (map last)
        (apply str)))
 
-(defn part-1 [_]
+(defn part-one [_]
   (->> (initial-state input)
        (apply-steps true)
        sort-boxes))
 
-(defn part-2 [_]
+(defn part-two [_]
   (->> (initial-state input)
        (apply-steps false)
        sort-boxes))
+
+(defn run [_]
+  (println "Part 1:" (a22.core/timed (part-one nil)))
+  (println "Part 2:" (a22.core/timed (part-two nil))))
