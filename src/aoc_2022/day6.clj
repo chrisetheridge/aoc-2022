@@ -4,6 +4,7 @@
 (def input
   (a22.core/read-input 6))
 
+;; sample + expected result
 (def samples
   [["bvwbjplbgvbhsrlpgdmjqwftvncz" 5]
    ["nppdvjthqldpwncqszvftbrmjlhg" 6]
@@ -16,8 +17,7 @@
     (let [probe (take n chars)]
       (if (= n (count (set probe)))
         [probe (+ n  pos)]
-        (recur (inc pos)
-               (next chars))))))
+        (recur (inc pos) (next chars))))))
 
 (defn part-one [_]
   (last (find-marker-position 4 input)))
