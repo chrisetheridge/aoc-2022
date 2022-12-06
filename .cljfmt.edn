@@ -1,1 +1,3 @@
-{}
+{:sort-ns-references?             true
+ :remove-surrounding-whitespace?  false
+ :remove-consecutive-blank-lines? false}
