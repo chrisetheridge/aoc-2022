@@ -15,8 +15,8 @@
   (loop [pos 0
          chars chars]
     (let [probe (take n chars)]
-      (if (= n (count (set probe)))
-        [probe (+ n  pos)]
+      (if (apply distinct? probe)
+        [probe (+ n pos)]
         (recur (inc pos) (next chars))))))
 
 (defn part-one [_]
